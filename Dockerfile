@@ -44,9 +44,11 @@ RUN mkdir -p /novnc && \
     mv /noVNC-master/* /novnc && \
     rm -rf /tmp/novnc.zip
 
-# Expose ports
-EXPOSE 5900   # VNC server
-EXPOSE 6080   # noVNC server
+# Expose VNC server port
+EXPOSE 5900
+
+# Expose noVNC server port
+EXPOSE 6080
 
 # Start the emulator and noVNC server
 CMD emulator -avd test -no-audio -no-window -gpu swiftshader & \
